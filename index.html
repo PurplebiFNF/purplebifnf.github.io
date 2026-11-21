@@ -14,13 +14,27 @@
 
     body {
       margin: 0;
-      background:
+      background-color: #000;
+      background-image:
         linear-gradient(rgba(128, 0, 255, 0.45), rgba(128, 0, 255, 0.45)),
-        #000 url("onelab_1795280195085.jpg") center / cover no-repeat fixed;
+        url("onelab_1795280195085.jpg");
+      background-repeat: no-repeat, repeat;
+      background-size: cover, auto;
+      background-position: center center, 0 0;
+      animation: move-background 30s linear infinite;
       color: #fff;
       font-family: "Rubik", sans-serif;
       -webkit-text-stroke: 2px #000;
       paint-order: stroke fill;
+    }
+
+    @keyframes move-background {
+      from {
+        background-position: center center, 0 0;
+      }
+      to {
+        background-position: center center, 100% 100%;
+      }
     }
 
     img {
